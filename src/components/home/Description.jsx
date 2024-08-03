@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import resume from '../../assets/resume.docx';
 import { Typewriter } from 'react-simple-typewriter';
 import {
-  FacebookOutlined,
+  // FacebookOutlined,
   GitHub,
   Instagram,
   LinkedIn,
@@ -173,10 +174,16 @@ const Description = () => {
           various languages and technologies
         </CareerDetails>
         <SocialLinksContainer>
-          <DownLoadCV>
-            Download CV
-            <FaDownload />
-          </DownLoadCV>
+          <a
+            style={{ color: 'inherit', textDecoration: 'none' }}
+            href={resume}
+            download='Godfrey Maina resume'
+          >
+            <DownLoadCV>
+              Download CV
+              <FaDownload />
+            </DownLoadCV>
+          </a>
           <SocialWrapper>
             <a
               target='_blank'
@@ -194,12 +201,17 @@ const Description = () => {
                 <LinkedIn className='icon' />
               </IconButton>
             </a>
-            <IconButton className='social'>
-              <Instagram className='icon' />
-            </IconButton>
-            <IconButton className='social'>
+            <a
+              target='_blank'
+              href='https://linkedin.com/in/codewithgodie'
+            >
+              <IconButton className='social'>
+                <Instagram className='icon' />
+              </IconButton>
+            </a>
+            {/* <IconButton className='social'>
               <FacebookOutlined className='icon' />
-            </IconButton>
+            </IconButton> */}
           </SocialWrapper>
         </SocialLinksContainer>
       </InfoContainer>
