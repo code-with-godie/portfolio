@@ -203,7 +203,7 @@ const Description = () => {
             </a>
             <a
               target='_blank'
-              href='https://linkedin.com/in/codewithgodie'
+              href='https://www.instagram.com/code_with_godie/?hl=en'
             >
               <IconButton className='social'>
                 <Instagram className='icon' />
