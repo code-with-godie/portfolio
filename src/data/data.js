@@ -13,6 +13,8 @@ import reactNative from '../assets/react-native.jpeg';
 import python from '../assets/python.jpeg';
 import photoshop from '../assets/photoshop.png';
 import figma from '../assets/figma.jpeg';
+import image from '../assets/image.png';
+import { FaBrush, FaCode } from 'react-icons/fa';
 export const skills = [
   {
     title: 'HTML',
@@ -153,5 +155,352 @@ export const education = [
     year: '2019-2020',
     career: 'Certified In Microsoft Office Packages',
     company: 'Rift Valley Institute Of Business Studies',
+  },
+];
+
+export const services = [
+  {
+    title: 'UI/UX Design',
+    Icon: FaBrush,
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+  },
+  {
+    title: 'Web developmnet',
+    Icon: FaCode,
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+  },
+  {
+    title: 'UI/UX Design',
+    Icon: FaBrush,
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+  },
+];
+export const mySkills = [
+  {
+    title: 'UI/UX Design',
+    data: [
+      {
+        skill: 'Photoshop',
+        level: 'Experienced',
+        logo: photoshop,
+      },
+      {
+        skill: 'Figma ',
+        level: 'intermediate',
+        logo: figma,
+      },
+      {
+        skill: 'Sketch',
+        level: 'intermediate',
+        logo: react,
+      },
+    ],
+  },
+  {
+    title: 'Front-End development',
+    data: [
+      {
+        skill: 'HTML',
+        level: 'Experienced',
+        logo: html,
+      },
+      {
+        skill: 'CSS',
+        level: 'Experienced',
+        logo: css,
+      },
+      {
+        skill: 'javaScript',
+        level: 'Experienced',
+        logo: javascript,
+      },
+      {
+        skill: 'React',
+        level: 'Experienced',
+        logo: react,
+      },
+      {
+        skill: 'React native',
+        level: 'Experienced',
+        logo: reactNative,
+      },
+      {
+        skill: 'Tailwind',
+        level: 'Experienced',
+        logo: css,
+      },
+      {
+        skill: 'styled components',
+        level: 'Experienced',
+        logo: react,
+      },
+      {
+        skill: 'sass',
+        level: 'Experienced',
+        logo: react,
+      },
+    ],
+  },
+  {
+    title: 'backend development',
+    data: [
+      {
+        skill: 'Node Js',
+        level: 'Experienced',
+        logo: node,
+      },
+      {
+        skill: 'Django',
+        level: 'intermediate',
+        logo: react,
+      },
+      {
+        skill: 'mongoDB',
+        level: 'Experienced',
+        logo: mongodb,
+      },
+      {
+        skill: 'MySQL',
+        level: 'intermediate',
+        logo: mysql,
+      },
+    ],
+  },
+  {
+    title: 'technologies',
+    data: [
+      {
+        skill: 'nextJS',
+        level: 'Experienced',
+        logo: next,
+      },
+      {
+        skill: 'appwrite',
+        level: 'Experienced',
+        logo: appwrite,
+      },
+      {
+        skill: 'firebase',
+        level: 'Experienced',
+        logo: react,
+      },
+
+      {
+        skill: 'Web sockets',
+        level: 'Experienced',
+        logo: webSocket,
+      },
+      {
+        skill: 'prisma ',
+        level: 'Intermediate',
+        logo: prisma,
+      },
+      {
+        skill: 'stripe',
+        level: 'intermediate',
+        logo: react,
+      },
+      {
+        skill: 'paypal',
+        level: 'intermediate',
+        logo: react,
+      },
+    ],
+  },
+];
+
+export const projects = [
+  {
+    title: 'fresh grub Kenya',
+    image: image,
+    category: 'react',
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+    technologies: [
+      {
+        name: 'react',
+        image: react,
+      },
+      {
+        name: 'appwrite',
+        image: appwrite,
+      },
+      {
+        name: 'styled-components',
+        image: react,
+      },
+      {
+        name: 'redux',
+        image: react,
+      },
+      {
+        name: 'stripe',
+        image: react,
+      },
+    ],
+  },
+  {
+    title: 'eden real estate',
+    image: image,
+    category: 'react',
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+    technologies: [
+      {
+        name: 'react',
+        image: react,
+      },
+      {
+        name: 'mongodb',
+        image: mongodb,
+      },
+      {
+        name: 'express',
+        image: react,
+      },
+      {
+        name: 'node',
+        image: node,
+      },
+      {
+        name: 'styled-components',
+        image: react,
+      },
+      {
+        name: 'stripe',
+        image: react,
+      },
+    ],
+  },
+  {
+    title: 'fresh grub Kenya',
+    image: image,
+    category: 'react',
+
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+    technologies: [
+      {
+        name: 'react',
+        image: react,
+      },
+      {
+        name: 'appwrite',
+        image: appwrite,
+      },
+      {
+        name: 'styled-components',
+        image: react,
+      },
+      {
+        name: 'redux',
+        image: react,
+      },
+      {
+        name: 'stripe',
+        image: react,
+      },
+    ],
+  },
+  {
+    title: 'eden real estate',
+    image: image,
+    category: 'react',
+
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+    technologies: [
+      {
+        name: 'react',
+        image: react,
+      },
+      {
+        name: 'mongodb',
+        image: mongodb,
+      },
+      {
+        name: 'express',
+        image: react,
+      },
+      {
+        name: 'node',
+        image: node,
+      },
+      {
+        name: 'styled-components',
+        image: react,
+      },
+      {
+        name: 'stripe',
+        image: react,
+      },
+    ],
+  },
+  {
+    title: 'fresh grub Kenya',
+    image: image,
+    category: 'react',
+
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+    technologies: [
+      {
+        name: 'react',
+        image: react,
+      },
+      {
+        name: 'appwrite',
+        image: appwrite,
+      },
+      {
+        name: 'styled-components',
+        image: react,
+      },
+      {
+        name: 'redux',
+        image: react,
+      },
+      {
+        name: 'stripe',
+        image: react,
+      },
+    ],
+  },
+  {
+    title: 'eden real estate',
+    image: image,
+    category: 'react',
+
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+    technologies: [
+      {
+        name: 'react',
+        image: react,
+      },
+      {
+        name: 'mongodb',
+        image: mongodb,
+      },
+      {
+        name: 'express',
+        image: react,
+      },
+      {
+        name: 'node',
+        image: node,
+      },
+      {
+        name: 'styled-components',
+        image: react,
+      },
+      {
+        name: 'stripe',
+        image: react,
+      },
+    ],
   },
 ];

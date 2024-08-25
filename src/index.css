@@ -2,9 +2,12 @@
 :root {
   --bg_primary: #1b1b22;
   --color_white: white;
-  --color_primary: #8750f9;
+  --color_primary: #33c648;
+  /* --color_primary: #8750f9; */
   --color_white-faded: #ffffff92;
   --color_gray: #8f8f96;
+  --color_success: #33c648;
+  --main_black: black;
 }
 * {
   padding: 0;
@@ -22,22 +25,23 @@
 }
 
 *::-webkit-scrollbar-thumb {
+  background: var(--color_primary);
   background: rgba(0, 0, 0, 0.117);
   border-radius: 10px;
-  background: linear-gradient(
-    to right,
-    var(--color_primary) 0%,
-    rgba(0, 0, 0, 0.117) 100%
-  );
+  background: var(--color_primary);
 }
 
 *::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.265);
 }
+html {
+  scroll-snap-type: mandatory;
+  scroll-behavior: smooth;
+}
 body {
   height: 100vh;
   overflow: auto;
-  background-color: var(--bg_primary);
+  background-color: black;
   color: var(--color_white);
   font-family: 'Poppins', sans-serif;
   font-weight: 100;
@@ -46,9 +50,12 @@ body {
 .colorTheme {
   background: linear-gradient(
     to right,
-    var(--color_primary) 0%,
+    var(--color_primary) 40%,
     var(--color_white) 100%
   );
   color: transparent;
   background-clip: text;
+}
+.section {
+  scroll-snap-align: center;
 }

@@ -1,21 +1,25 @@
-import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 const Container = styled(motion.article)`
   padding: 0.5rem;
   display: grid;
   gap: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
 `;
 const Item = styled.div`
   display: flex;
   gap: 0.5rem;
-  justify-content: center;
   align-items: center;
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+    /* flex-direction: column; */
+  }
 `;
 const Number = styled.h4`
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  white-space: nowrap;
 `;
 const Description = styled.p`
   font-weight: 100;
@@ -23,14 +27,17 @@ const Description = styled.p`
   /* text-align: justify; */
   @media screen and (min-width: 768px) {
     letter-spacing: 2px;
-    font-size: larger;
+    font-size: 1rem;
   }
 `;
 const varients = {
   start: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 3 } },
+  animate: {
+    opacity: 1,
+    transition: { delay: 3, staggerChildren: 0.1 },
+  },
 };
-const Footer = () => {
+const HeroFooter = () => {
   return (
     <Container
       initial='start'
@@ -40,24 +47,24 @@ const Footer = () => {
       <Item>
         <Number className='colorTheme'>
           {' '}
-          {new Date().getFullYear() - 2022}{' '}
+          {new Date().getFullYear() - 2022} +
         </Number>
         <Description>years of experience</Description>
       </Item>
-      <Item>
-        <Number className='colorTheme'> 10 </Number>
+      {/* <Item>
+        <Number className='colorTheme'> 10+ </Number>
         <Description>project completed</Description>
-      </Item>
+      </Item> */}
       <Item>
-        <Number className='colorTheme'>10 </Number>
+        <Number className='colorTheme'>10+ </Number>
         <Description>technologies mastered</Description>
       </Item>
       <Item>
-        <Number className='colorTheme'> 150 </Number>
+        <Number className='colorTheme'> 150+ </Number>
         <Description>clients satisfied</Description>
       </Item>
     </Container>
   );
 };
 
-export default Footer;
+export default HeroFooter;

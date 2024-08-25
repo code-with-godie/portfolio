@@ -1,20 +1,17 @@
 import styled from 'styled-components';
-import Hero from '../../components/home/Hero';
+import Hero from '../../components/hero/Hero';
 import { motion } from 'framer-motion';
-const Container = styled(motion.article)`
-  flex: 1;
-  height: 100%;
-`;
+import Services from '../../components/services/Services';
+import Skills from '../../components/skills/Skill';
+import Contacts from '../../components/contact/Contacts';
+const Container = styled(motion.article)``;
 const Home = () => {
-  const slideUpVarients = {
-    exit: { opacity: 0, y: '-100vh', transition: { duration: 0.5 } },
-  };
   return (
-    <Container
-      variants={slideUpVarients}
-      exit='exit'
-    >
+    <Container>
       <Hero />
+      <Services />
+      <Skills />
+      <Contacts />
     </Container>
   );
 };

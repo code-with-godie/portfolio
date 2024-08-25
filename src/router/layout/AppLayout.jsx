@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import Topnav from '../../components/nav/Topnav';
+import Footer from '../../components/footer/Footer';
 import { Outlet, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Bottomnav from '../../components/nav/Bottomnav';
 const Wrapper = styled.main`
   height: 100vh;
   padding: 0.5rem;
@@ -11,9 +13,8 @@ const Wrapper = styled.main`
 `;
 const Container = styled(motion.section)`
   flex: 1;
-  max-width: 1000px;
-  display: flex;
-  flex-direction: column;
+  max-width: 1500px;
+  overflow: auto;
 `;
 
 const AppLayout = () => {
@@ -23,6 +24,8 @@ const AppLayout = () => {
       <Container>
         <Topnav />
         <Outlet />
+        <Footer />
+        <Bottomnav />
       </Container>
     </Wrapper>
   );

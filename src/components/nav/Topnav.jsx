@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../../assets/logo2.png';
 import { motion } from 'framer-motion';
@@ -7,17 +7,24 @@ const Container = styled(motion.nav)`
   align-items: center;
   gap: 0.5rem;
   overflow: hidden;
+  background: var(--main_black);
+  position: sticky;
+  top: 0;
+  z-index: 100000;
+  padding: 0.5rem;
 `;
 const LogoContainer = styled(motion.div)`
   flex: 1;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 `;
 const LinkContainer = styled(motion.div)`
   display: none;
   @media screen and (min-width: 768px) {
     display: flex;
+    flex: 1;
     align-items: center;
     gap: 0.5rem;
     .link {
@@ -67,19 +74,29 @@ const HireButton = styled(motion.button)`
   cursor: pointer;
 `;
 const variants = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 2, staggerChildren: 1 } },
-  exit: { opacity: 1 },
+  initial: {},
+  animate: {},
+  exit: {},
 };
 const btnVariants = {
-  initial: { opacity: 0, x: '100vh' },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 1.5, staggerChildren: 1, delay: 5 },
-  },
+  initial: {},
+  animate: {},
 };
+// const variants = {
+//   initial: { opacity: 0 },
+//   animate: { opacity: 1, transition: { duration: 2, staggerChildren: 1 } },
+//   exit: { opacity: 1 },
+// };
+// const btnVariants = {
+//   initial: { opacity: 0, x: '100vh' },
+//   animate: {
+//     opacity: 1,
+//     x: 0,
+//     transition: { duration: 1.5, staggerChildren: 1, delay: 5 },
+//   },
+// };
 const Topnav = () => {
+  const navigate = useNavigate();
   return (
     <Container
       variants={variants}
@@ -87,7 +104,10 @@ const Topnav = () => {
       animate='animate'
       exit='exit'
     >
-      <LogoContainer variants={variants}>
+      <LogoContainer
+        onClick={() => navigate('/')}
+        variants={variants}
+      >
         <Logo
           src={logo}
           variants={variants}
@@ -112,43 +132,53 @@ const Topnav = () => {
           </NavLink>
         </motion.div>
         <motion.div variants={variants}>
-          <NavLink
-            to='/services'
+          <a
+            href='/#services'
             className={({ isActive }) =>
               isActive ? 'colorTheme link active' : 'link colorTheme'
             }
           >
             services
-          </NavLink>
+          </a>
         </motion.div>
         <motion.div variants={variants}>
-          <NavLink
-            to='/resume'
+          <a
+            href='/#skills'
             className={({ isActive }) =>
               isActive ? 'colorTheme link active' : 'link colorTheme'
             }
           >
-            resume
-          </NavLink>
+            my skills
+          </a>
         </motion.div>
         <motion.div variants={variants}>
-          <NavLink
-            to='/work'
-            className={({ isActive }) =>
-              isActive ? 'colorTheme link active' : 'link colorTheme'
-            }
-          >
-            work
-          </NavLink>
-        </motion.div>
-        <motion.div variants={variants}>
-          <NavLink
-            to='/contact'
+          <a
+            href='/#contact'
             className={({ isActive }) =>
               isActive ? 'colorTheme link active' : 'link colorTheme'
             }
           >
             contact
+          </a>
+        </motion.div>
+        <motion.div variants={variants}>
+          <NavLink
+            to='/projects'
+            className={({ isActive }) =>
+              isActive ? 'colorTheme link active' : 'link colorTheme'
+            }
+          >
+            my projects
+          </NavLink>
+        </motion.div>
+        <motion.div variants={variants}>
+          <NavLink
+            to='/about'
+            className={({ isActive }) =>
+              isActive ? 'colorTheme link active' : 'link colorTheme'
+            }
+          >
+            About
           </NavLink>
         </motion.div>
       </LinkContainer>
