@@ -2,7 +2,8 @@
 :root {
   --bg_primary: #1b1b22;
   --color_white: white;
-  --color_primary: #33c648;
+  /* --color_primary: #33c648; */
+  --color_primary: #c7023a;
   /* --color_primary: #8750f9; */
   --color_white-faded: #ffffff92;
   --color_gray: #8f8f96;
