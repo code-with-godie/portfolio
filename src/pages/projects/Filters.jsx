@@ -11,13 +11,13 @@ const Container = styled.div`
 
 const Label = styled.p`
   text-transform: capitalize;
-  font-size: 1.3rem;
-  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  padding: 0.3rem 0.7rem;
   border-radius: 1rem;
   cursor: pointer;
   &.active {
     color: white;
-    background-color: var(--color_primary);
+    background-color: var(--bg_primary);
   }
 `;
 const Filters = () => {

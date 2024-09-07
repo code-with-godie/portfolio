@@ -8,6 +8,7 @@ const Container = styled(motion.section)`
   border-radius: 0.5rem;
   background-color: var(--bg_primary);
   padding: 1rem;
+  cursor: pointer;
 `;
 
 const Title = styled(motion.h2)`
@@ -67,6 +68,7 @@ const Skill = ({ title, data }) => {
   const inView = useInView(ref, { margin: '30px' });
   return (
     <Container
+      id='skills'
       variants={varients}
       initial='initial'
       ref={ref}

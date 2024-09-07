@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../../assets/logo2.png';
 import { motion } from 'framer-motion';
+import { HashLink as Link } from 'react-router-hash-link';
 const Container = styled(motion.nav)`
   display: flex;
   align-items: center;
@@ -65,13 +66,35 @@ const Name = styled(motion.h3)`
   font-size: 1.7rem;
 `;
 const HireButton = styled(motion.button)`
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   color: white;
-  background-color: var(--color_primary);
+  background-color: var(--main_black);
+  /* background-color: var(--color_primary); */
   border-radius: 1rem;
   outline: none;
   border: none;
   cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    background-image: conic-gradient(
+      from var(--a),
+      green,
+      #c20b3f,
+      var(--color_primary)
+    );
+    border-radius: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -10;
+    animation: spin 6s linear infinite;
+  }
 `;
 const variants = {
   initial: {},
@@ -132,34 +155,50 @@ const Topnav = () => {
           </NavLink>
         </motion.div>
         <motion.div variants={variants}>
-          <a
-            href='/#services'
-            className={({ isActive }) =>
-              isActive ? 'colorTheme link active' : 'link colorTheme'
+          <Link
+            className='link colorTheme'
+            to='/#services'
+            offset={-150}
+            scroll={el =>
+              el.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'nearest',
+              })
             }
           >
             services
-          </a>
+          </Link>
         </motion.div>
         <motion.div variants={variants}>
-          <a
-            href='/#skills'
-            className={({ isActive }) =>
-              isActive ? 'colorTheme link active' : 'link colorTheme'
+          <Link
+            className='link colorTheme'
+            to='/#skills'
+            smooth
+            scroll={el =>
+              el.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'nearest',
+              })
             }
           >
-            my skills
-          </a>
+            skills
+          </Link>
         </motion.div>
         <motion.div variants={variants}>
-          <a
-            href='/#contact'
-            className={({ isActive }) =>
-              isActive ? 'colorTheme link active' : 'link colorTheme'
+          <Link
+            className='link colorTheme'
+            to='/#contact'
+            smooth
+            scroll={el =>
+              el.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'nearest',
+              })
             }
-          >
-            contact
-          </a>
+          ></Link>
         </motion.div>
         <motion.div variants={variants}>
           <NavLink

@@ -2,13 +2,11 @@
 :root {
   --bg_primary: #1b1b22;
   --color_white: white;
-  /* --color_primary: #33c648; */
-  --color_primary: #c7023a;
-  /* --color_primary: #8750f9; */
+  --color_primary: #33c648;
   --color_white-faded: #ffffff92;
   --color_gray: #8f8f96;
   --color_success: #33c648;
-  --main_black: black;
+  --main_black: rgb(21, 21, 21);
 }
 * {
   padding: 0;
@@ -19,6 +17,7 @@
 
 *::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 *::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.063);
@@ -42,7 +41,7 @@ html {
 body {
   height: 100vh;
   overflow: auto;
-  background-color: black;
+  background-color: var(--main_black);
   color: var(--color_white);
   font-family: 'Poppins', sans-serif;
   font-weight: 100;
@@ -59,4 +58,17 @@ body {
 }
 .section {
   scroll-snap-align: center;
+}
+@property --a {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes spin {
+  from {
+    --a: 0deg;
+  }
+  to {
+    --a: 360deg;
+  }
 }

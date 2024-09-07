@@ -16,6 +16,7 @@ const Container = styled.section`
   display: flex;
   flex-direction: column-reverse;
   gap: 2rem;
+  padding: 0.5rem;
   @media screen and (min-width: 768px) {
     align-items: center;
     margin: 3rem;
@@ -122,10 +123,12 @@ const SocialWrapper = styled.div`
 `;
 const DownLoadCV = styled.button`
   padding: 1rem;
+
   color: var(--color_green);
-  border: 1px solid var(--color_primary);
+  border: none;
+  /* border: 1px solid var(--color_primary); */
   border-radius: 2rem;
-  background: transparent;
+  background-color: var(--main_black);
   outline: none;
   white-space: nowrap;
   font-size: 1.2rem;
@@ -140,12 +143,32 @@ const DownLoadCV = styled.button`
     justify-content: start;
     padding: 0.5rem 1rem;
   }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    background-image: conic-gradient(
+      from var(--a),
+      green,
+      #c20b3f,
+      var(--color_primary)
+    );
+    border-radius: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -10;
+    animation: spin 6s linear infinite;
+  }
 `;
 const StyledLink = styled(motion.a)`
   display: flex;
   width: 100%;
   color: inherit;
   text-decoration: none;
+
   @media screen and (min-width: 768px) {
     align-items: center;
     width: auto !important;

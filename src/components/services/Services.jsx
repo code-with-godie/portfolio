@@ -51,7 +51,7 @@ const varients = {
 };
 const Services = () => {
   const ref = useRef();
-  const inView = useInView(ref, { margin: '-20px' });
+  const inView = useInView(ref);
   return (
     <Container
       id='services'

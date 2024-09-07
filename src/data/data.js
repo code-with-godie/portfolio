@@ -85,24 +85,24 @@ export const experience = [
     company: 'freelancing',
   },
   {
-    year: '2022-present',
+    year: '2022-2023',
     career: 'mobile developer',
     company: 'freelancing',
   },
   {
-    year: '2022-2023',
+    year: '2021-2022',
     career: 'backend developer',
     company: 'freelancing',
   },
   {
-    year: '2020-2022',
+    year: '2019-2021',
     career: 'front-end developer',
     company: 'freelancing',
   },
 ];
 export const education = [
   {
-    year: '2024-present',
+    year: '2019-present',
     career: 'bachelor of science in softare development',
     company: 'KCA Universiry',
   },
@@ -124,12 +124,7 @@ export const education = [
   {
     year: '2023-2024',
     career: 'Certified In Full-Stack Web Development',
-    company: 'online course',
-  },
-  {
-    year: '2023-2024',
-    career: 'Certified In Python Development',
-    company: 'online course',
+    company: 'KCA university',
   },
   {
     year: '2023-2024',
@@ -147,7 +142,7 @@ export const education = [
     company: 'online course',
   },
   {
-    year: '2020-2021',
+    year: '2019-2021',
     career: 'Certified In HTML,CSS And Vanilla JavaScript',
     company: 'KCA University',
   },
@@ -315,7 +310,20 @@ export const mySkills = [
 export const projects = [
   {
     title: 'fresh grub Kenya',
-    image: image,
+    images: [
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+    ],
     category: 'react',
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
@@ -344,7 +352,20 @@ export const projects = [
   },
   {
     title: 'eden real estate',
-    image: image,
+    images: [
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+    ],
     category: 'react',
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
@@ -377,7 +398,20 @@ export const projects = [
   },
   {
     title: 'fresh grub Kenya',
-    image: image,
+    images: [
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+    ],
     category: 'react',
 
     description:
@@ -407,7 +441,20 @@ export const projects = [
   },
   {
     title: 'eden real estate',
-    image: image,
+    images: [
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+    ],
     category: 'react',
 
     description:
@@ -441,7 +488,20 @@ export const projects = [
   },
   {
     title: 'fresh grub Kenya',
-    image: image,
+    images: [
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+    ],
     category: 'react',
 
     description:
@@ -471,7 +531,20 @@ export const projects = [
   },
   {
     title: 'eden real estate',
-    image: image,
+    images: [
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+      {
+        image,
+        desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis nam eaque voluptates incidunt sapiente beatae tempore fugiat fuga! Nostrum sequi aut dignissimos suscipit tenetur beatae. Quia quis nesciunt reprehenderit?',
+      },
+    ],
     category: 'react',
 
     description:

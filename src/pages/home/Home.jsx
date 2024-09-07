@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Services from '../../components/services/Services';
 import Skills from '../../components/skills/Skill';
 import Contacts from '../../components/contact/Contacts';
+import StairsAnimation from '../../components/animations/StairsAnimation';
 const Container = styled(motion.article)``;
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Services />
       <Skills />
       <Contacts />
+      <StairsAnimation />
     </Container>
   );
 };

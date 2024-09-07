@@ -1,3 +1,6 @@
-3. download react scroll
-4. download the phone svg image and implement
-5. install email js and implement
+1. implement real descriptions
+2. implement hire me functionality
+3. install email js and implement
+4. download real images of technologies
+5. service component update description and icons
+6. learn figma and make project banners

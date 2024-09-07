@@ -1,10 +1,11 @@
-import { Home, Phone } from '@mui/icons-material';
-import { NavLink } from 'react-router-dom';
+import { Home, Person, Phone } from '@mui/icons-material';
+import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-
+import { HashLink as Link } from 'react-router-hash-link';
+import { GrProjects } from 'react-icons/gr';
 const Container = styled.nav`
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.2rem;
   background-color: var(--bg_primary);
   position: fixed;
   bottom: 0;
@@ -16,22 +17,17 @@ const Container = styled.nav`
   .link {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.1rem;
     color: inherit;
+    align-items: center;
     text-decoration: none;
     .icon {
-      font-size: 2.5rem;
+      font-size: 1.5rem;
     }
   }
   .link.active {
     color: var(--color_primary);
   }
-  /* .above {
-    position: absolute;
-    top: -100%;
-    z-index: 1000000000000;
-    background-color: red;
-  } */
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -42,6 +38,7 @@ const Label = styled.p`
   font-size: 1rem;
 `;
 const Bottomnav = () => {
+  const location = useLocation();
   return (
     <Container>
       <NavLink
@@ -55,21 +52,29 @@ const Bottomnav = () => {
         className='link above'
         to='/projects'
       >
-        <Home className='icon' />
+        <GrProjects className='icon' />
         <Label>work</Label>
       </NavLink>
-      <NavLink
-        className='link'
-        to='/'
+      <Link
+        className={location.hash === '/#contact' ? 'link active ' : 'link'}
+        to='/#contact'
+        offset={-150}
+        scroll={el =>
+          el.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest',
+          })
+        }
       >
         <Phone className='icon' />
         <Label>contact</Label>
-      </NavLink>
+      </Link>
       <NavLink
         className='link'
         to='/about'
       >
-        <Home className='icon' />
+        <Person className='icon' />
         <Label>about</Label>
       </NavLink>
     </Container>

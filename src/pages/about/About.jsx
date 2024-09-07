@@ -1,10 +1,31 @@
 import styled from 'styled-components';
-
-const Container = styled.section`
-  min-height: 100vh;
+import Biography from '../../components/about/Biography';
+import Education from '../../components/about/Education';
+import Experience from '../../components/about/Experience';
+import CurveAnimation from '../../components/animations/CurveAnimation';
+const Container = styled.div`
+  justify-content: center;
+  display: flex;
 `;
+const Wrapper = styled.div`
+  max-width: 900px;
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+`;
+
 const About = () => {
-  return <Container>my biography my education</Container>;
+  return (
+    <Container>
+      <Wrapper>
+        <Biography />
+        <Education />
+        <Experience />
+      </Wrapper>
+      <CurveAnimation />
+    </Container>
+  );
 };
 
 export default About;

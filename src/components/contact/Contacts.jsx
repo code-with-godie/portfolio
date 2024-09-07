@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Email, Person } from '@mui/icons-material';
+import { Email, LocationOn, Person, Phone } from '@mui/icons-material';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -8,11 +8,18 @@ const Container = styled.section`
   display: flex;
   gap: 0.5rem;
   padding: 0.5rem;
-  flex-direction: column;
+  flex-direction: column-reverse;
   @media screen and (min-width: 768px) {
     align-items: center;
     flex-direction: row;
     height: 100vh;
+  }
+  .icon {
+    color: var(--color_primary);
+    font-size: 2rem;
+  }
+  .icon.small {
+    font-size: 1.5rem;
   }
 `;
 const Left = styled(motion.div)`
@@ -46,6 +53,11 @@ const DescriptionContainer = styled(motion.div)`
   flex-direction: column;
   gap: 0.3rem;
 `;
+const DescriptionWrapper = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
 const DescriptionLabel = styled.h3`
   font-size: 1.2rem;
   text-transform: capitalize;
@@ -70,8 +82,11 @@ const InputWrapper = styled.div`
   padding: 0.5rem;
   border: 1px solid var(--color_primary);
   border-radius: 0.5rem;
-  .icon {
-    color: var(--color_primary);
+  &.invalid {
+    border: 1px solid tomato;
+    .icon {
+      color: tomato;
+    }
   }
 `;
 const Input = styled.input`
@@ -105,6 +120,9 @@ const Message = styled.textarea`
   outline: none;
   font-size: 1rem;
   color: white;
+  &.invalid {
+    border: 1px solid tomato;
+  }
 `;
 const PhoneContainer = styled(motion.div)`
   position: absolute;
@@ -169,18 +187,19 @@ const Contacts = () => {
     name: z
       .string()
       .min(3, { message: 'username must be more than 3 charactors' })
-      .max(50, { message: 'username must be less than 3 charactors' }),
-    email: z.string(),
-    message: z.string(),
+      .max(50, { message: 'username must be less than 50 charactors' }),
+    email: z.string().email({ message: 'invalid email' }),
+    message: z.string().min(1, { message: 'message is required' }),
   });
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: zodResolver(schema) });
-  const onSubmit = handleSubmit(data => {
-    console.log(data, errors);
-  });
+  const onSubmit = data => {
+    console.log(data);
+  };
+
   return (
     <Container
       id='contact'
@@ -198,18 +217,29 @@ const Contacts = () => {
           >
             let&apos;s work together
           </Title>
-          <DescriptionContainer variants={varients}>
-            <DescriptionLabel className='colorTheme'>E-mail</DescriptionLabel>
-            <Description>ngugimaina2019@gmail.com</Description>
-          </DescriptionContainer>
-          <DescriptionContainer variants={varients}>
-            <DescriptionLabel className='colorTheme'>address</DescriptionLabel>
-            <Description>10205,Nairobi,Kenya</Description>
-          </DescriptionContainer>
-          <DescriptionContainer variants={varients}>
-            <DescriptionLabel className='colorTheme'>phone</DescriptionLabel>
-            <Description>+254 112483569</Description>
-          </DescriptionContainer>
+          <DescriptionWrapper variants={varients}>
+            <Email className='icon' />
+            <DescriptionContainer variants={varients}>
+              <DescriptionLabel className='colorTheme'>E-mail</DescriptionLabel>
+              <Description>ngugimaina2019@gmail.com</Description>
+            </DescriptionContainer>
+          </DescriptionWrapper>
+          <DescriptionWrapper variants={varients}>
+            <LocationOn className='icon' />
+            <DescriptionContainer variants={varients}>
+              <DescriptionLabel className='colorTheme'>
+                address
+              </DescriptionLabel>
+              <Description>10205,Nairobi,Kenya</Description>
+            </DescriptionContainer>
+          </DescriptionWrapper>
+          <DescriptionWrapper variants={varients}>
+            <Phone className='icon' />
+            <DescriptionContainer variants={varients}>
+              <DescriptionLabel className='colorTheme'>phone</DescriptionLabel>
+              <Description>+254 112483569</Description>
+            </DescriptionContainer>
+          </DescriptionWrapper>
         </Wrapper>
       </Left>
       <Right>
@@ -241,49 +271,41 @@ const Contacts = () => {
             </svg>
           </PhoneContainer>
           <Form
-            onSubmit={onSubmit}
+            onSubmit={handleSubmit(onSubmit)}
             variants={formVarients}
             initial='initial'
             whileInView='animate'
           >
-            <InputWrapper>
-              <Person className='icon' />
+            <InputWrapper className={errors?.name?.message && 'invalid'}>
+              <Person className='icon small' />
               <Input
                 placeholder='name'
                 {...register('name')}
-                required
               />
             </InputWrapper>
-            {errors?.message?.name && (
-              <ErrorMessage> {errors?.message?.name?.toString()} </ErrorMessage>
+            {errors?.name?.message && (
+              <ErrorMessage> {errors?.name?.message} </ErrorMessage>
             )}
-            <InputWrapper>
-              <Email className='icon' />
+            <InputWrapper className={errors?.email?.message && 'invalid'}>
+              <Email className='icon small' />
               <Input
                 placeholder='email address...'
-                type='email'
                 {...register('email')}
-                required
               />
             </InputWrapper>
-            {errors?.message?.email && (
-              <ErrorMessage>
-                {' '}
-                {errors?.message?.email?.toString()}{' '}
-              </ErrorMessage>
+            {errors?.email?.message && (
+              <ErrorMessage> {errors?.email?.message} </ErrorMessage>
             )}
 
             <Message
+              className={errors?.message?.message && 'invalid'}
               {...register('message')}
               placeholder='message'
             />
             {errors?.message?.message && (
-              <ErrorMessage>
-                {' '}
-                {errors?.message?.message?.toString()}{' '}
-              </ErrorMessage>
+              <ErrorMessage> {errors?.message?.message} </ErrorMessage>
             )}
-            <Button>send</Button>
+            <Button type='submit'>send</Button>
           </Form>
         </FormWrapper>
       </Right>
